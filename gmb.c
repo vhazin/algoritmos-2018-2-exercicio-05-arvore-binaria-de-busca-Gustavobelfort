@@ -70,8 +70,8 @@ int main(){
     
     int testNumber, nodesNumber, element;
 
-    scanf("%d", testNumber);
-    for(int i; i < testNumber; i++){
+    scanf("%d", &testNumber);
+    for(int j = 1; j < (testNumber + 1); j++){
     scanf("%d", &nodesNumber);
 
     for(int i = 0; i < nodesNumber; i++){
@@ -79,10 +79,15 @@ int main(){
         insert(element, &root);
     }
 
-    printf("Case %d:",i);
+    printf("Case %d:",j);
+    printf("\nPre.:");
     preorder(root);
+    printf("\nIn..:");
+    inorder(root);
+    printf("\nPost:");
     postorder(root);
+    printf("\n");
 
-    testNumber--;
+    destroy(root);
     }
 }
